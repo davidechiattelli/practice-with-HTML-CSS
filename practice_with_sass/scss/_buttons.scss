@@ -1,0 +1,24 @@
+$btn-primary-color: lighten($primary-color, 10%);
+
+// shared style
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+
+  &:hover {
+    transform: scale(.98);
+  }
+}
+
+.btn-primary{
+  // @estend per utilizzare stili condivisi
+  @extend %btn;
+  // @include per richiamare mixin
+  @include set-colors($btn-primary-color);
+}
+.btn-secondary{
+  @extend %btn;
+  @include set-colors($secondary-color);
+}

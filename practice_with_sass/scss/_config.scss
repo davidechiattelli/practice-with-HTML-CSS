@@ -1,0 +1,24 @@
+// variabili
+
+$font-stack: Arial, Helvetica, sans-serif;
+$light-color: #f4f4f4;
+// $primary-color: #e0ffff;
+$primary-color: #0e6cff;
+$secondary-color: #ff8700; 
+
+// function -> prende in input un valore e ne restituisce un altro
+// set text color based on background
+@function set-text-color($color){
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else{
+    @return #fff;
+  }
+}
+
+// mixin -> prende in input un valore senza ritornare nulla
+// set background and text color
+@mixin set-colors($color){
+  background-color: $color;
+  color: set-text-color($color);
+}
